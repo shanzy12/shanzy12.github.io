@@ -6,21 +6,29 @@
 				text-align: center;
 				font-family: helvetica;
 			}
-			table {
-				margin: auto;
-				border:1px solid black;
-				border-collapse: collapse;
+
+			.row {
+				display: flex;
+				justify-content: center;
+				max-width: 500px;
+				margin-left: auto;
+				margin-right: auto;
+				flex-flow: wrap;
 			}
-			td {
+
+			.row .card {
 				width: 200px;
-				padding-top: 50px;
-				padding-bottom: 50px;
-				border:1px solid black;
-				font-size: 14pt;
+				height: 100px;
+				background: #eee;
+				border: 1px solid #ccc;
+				margin: 5px;
+				border-radius: 5px;
+				padding: 10px;
+				color: #137369;
 			}
-			p {
-				text-align: center;
-				font-size: 12pt;
+
+			a {
+				color:#137369;
 			}
 		</style>
 		<title>
@@ -31,53 +39,32 @@
 		<h1>
 			Character Sheets for the Mighty Nein
 		</h1>
-		<table>
-			<tr>
-				<td>
-					<u>Beau</u>
-					<p>
-						Monk
-					</p>
-				</td>
-				<td>
-					<u>Cadeceus</u>
-					<p>
-						Cleric
-					</p>
-				</td>
-				<td>
-					<u>Fjord</u>
-					<p>
-						Warlock/Paladin
-					</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<u>Jester</u>
-					<p>
-						Cleric
-					</p>
-				</td>
-				<td>
-					<u>Nott</u>
-					<p>
-						Rogue
-					</p>
-				</td>
-				<td>
-					<u>Veth</u>
-					<p>
-						Rogue
-					</p>
-				</td>
-				<td>
-					<u>Yasha</u>
-					<p>
-						Barbarian
-					</p>
-				</td>
-			</tr>
-		</table>
+
+		<div class="row">
+			<div class="card">
+				<a href="/critrole/beau.html">Beau</a>
+			</div>
+			<div class="card">
+				Caduceus
+			</div>
+			<div class="card">
+				Caleb
+			</div>
+			<div class="card">
+				Fjord
+			</div>
+			<div class="card">
+				Jester
+			</div>
+			<div class="card">
+				Nott
+			</div>
+			<div class="card">
+				Veth
+			</div>
+			<div class="card">
+				Yasha
+			</div>
+		</div>
 	</body>
 </html>
