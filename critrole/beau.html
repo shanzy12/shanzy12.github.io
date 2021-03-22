@@ -53,19 +53,19 @@
 <body>
 	<h1>Beau is a monk of the <a target="_blank" href="https://criticalrole.fandom.com/wiki/Cobalt_Soul">Cobalt Soul</a>.
 	</h1>
-	<h2>
+	<h2 id="statLevel">
 		Current Stats
 	</h2>
 	<div class="row">
 		<div class="card">
 			Max HP
-			<div class="stat">
+			<div class="stat" id="hp">
 				120
 			</div>
 		</div>
 		<div class="card">
 			AC
-			<div class="stat">
+			<div class="stat" id="ac">
 				21
 			</div>
 		</div>	
@@ -73,37 +73,37 @@
 	<div class="row">
 		<div class="card">
 			Strength
-			<div class="stat">
+			<div class="stat" id="str">
 				10
 			</div>
 		</div>
 		<div class="card">
 			Dexterity
-			<div class="stat">
+			<div class="stat" id="dex">
 				20
 			</div>
 		</div>
 		<div class="card">
 			Constitution
-			<div class="stat">
+			<div class="stat" id="con">
 				16
 			</div>
 		</div>
 		<div class="card">
 			Intelligence
-			<div class="stat">
+			<div class="stat" id="int">
 				19
 			</div>
 		</div>
 		<div class="card">
 			Wisdom
-			<div class="stat">
+			<div class="stat" id="wis">
 				18
 			</div>
 		</div>
 		<div class="card">
 			Charisma
-			<div class="stat">
+			<div class="stat" id="cha">
 				12
 			</div>
 		</div>
@@ -111,32 +111,47 @@
 	<h3>
 			See stats by level
 	</h3>
-	<select class="dropdown">
+	<select class="dropdown" id="dropdown">
 		<option>
 			Select a level
 		</option>
 		<option>
-			1
-		</option>
-		<option>		
 			2
 		</option>
-		<option>
+		<option>		
 			3
+		</option>
+		<option>
+			4
 		</option>
 	</select>
 	<div id="stat"></div>
 	<script type="text/javascript">
-		// const x = "moop";
-		// const password = prompt("enter password");
-		// if (password===x) {
-		// 	alert("congrations you did it");
-		// }
-		// if (password!==x) {
-		// 	alert("WRONG");
-		// }
-		const element = document.getElementById("stat");
-		element.innerText="Level 1"
+		function updateStats(){
+			const level = document.getElementById("dropdown").value;
+			const statLevel = document.getElementById("statLevel");
+			const hp = document.getElementById("hp");
+			const ac = document.getElementById("ac");
+			const str = document.getElementById("str");
+			const dex = document.getElementById("dex");
+			const int = document.getElementById("int");
+			const wis = document.getElementById("wis");
+			const cha = document.getElementById("cha");
+			console.log(`level ${level} selected`);
+			if (level === "2"){
+				statLevel.innerText = "Level 2";
+				hp.innerText = "18";
+				ac.innerText = "17";
+				str.innerText = "10";
+				dex.innerText = "18";
+				con.innerText = "16";
+				int.innerText = "14";
+				wis.innerText = "16";
+				cha.innerText = "12";
+			}
+		}
+		const element = document.getElementById("dropdown");
+		element.addEventListener("change", updateStats);
 	</script>
 </body>
 </html>
