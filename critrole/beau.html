@@ -59,53 +59,37 @@
 	<div class="row">
 		<div class="card">
 			Max HP
-			<div class="stat" id="hp">
-				120
-			</div>
+			<div class="stat" id="hp"></div>
 		</div>
 		<div class="card">
 			AC
-			<div class="stat" id="ac">
-				21
-			</div>
+			<div class="stat" id="ac"></div>
 		</div>	
 	</div>
 	<div class="row">
 		<div class="card">
 			Strength
-			<div class="stat" id="str">
-				10
-			</div>
+			<div class="stat" id="str"></div>
 		</div>
 		<div class="card">
 			Dexterity
-			<div class="stat" id="dex">
-				20
-			</div>
+			<div class="stat" id="dex"></div>
 		</div>
 		<div class="card">
 			Constitution
-			<div class="stat" id="con">
-				16
-			</div>
+			<div class="stat" id="con"></div>
 		</div>
 		<div class="card">
 			Intelligence
-			<div class="stat" id="int">
-				19
-			</div>
+			<div class="stat" id="int"></div>
 		</div>
 		<div class="card">
 			Wisdom
-			<div class="stat" id="wis">
-				18
-			</div>
+			<div class="stat" id="wis"></div>
 		</div>
 		<div class="card">
 			Charisma
-			<div class="stat" id="cha">
-				12
-			</div>
+			<div class="stat" id="cha"></div>
 		</div>
 	</div>
 	<h3>
@@ -185,20 +169,25 @@
 				12: { statLevel: "Level 12", hp: 99, ac: 21, str: 10, dex: 20, con: 16, int: 19, wis: 18, cha: 12},
 				13: { statLevel: "Level 13", hp: 109, ac: 21, str: 10, dex: 20, con: 16, int: 19, wis: 18, cha: 12},
 				14: { statLevel: "Level 14", hp: 120, ac: 21, str: 10, dex: 20, con: 16, int: 19, wis: 18, cha: 12},
-				15: { statLevel: "Level 15", hp: 128, ac: 21, str: 10, dex: 20, con: 16, int: 19, wis: 18, cha: 12},
+				15: { statLevel: "Level 15 (Current)", hp: 128, ac: 21, str: 10, dex: 20, con: 16, int: 19, wis: 18, cha: 12},
 			};
-			statLevel.innerText = beau[level].statLevel;
-			hp.innerText = beau[level].hp;
-			ac.innerText = beau[level].ac;
-			str.innerText = beau[level].str;
-			dex.innerText = beau[level].dex;
-			con.innerText = beau[level].con;
-			int.innerText = beau[level].int;
-			wis.innerText = beau[level].wis;
-			cha.innerText = beau[level].cha;
+			let stats = beau[level];
+			if (!stats) {
+				stats = beau[15];
+			}
+			statLevel.innerText = stats.statLevel;
+			hp.innerText = stats.hp;
+			ac.innerText = stats.ac;
+			str.innerText = stats.str;
+			dex.innerText = stats.dex;
+			con.innerText = stats.con;
+			int.innerText = stats.int;
+			wis.innerText = stats.wis;
+			cha.innerText = stats.cha;
 		}
 		const element = document.getElementById("dropdown");
 		element.addEventListener("change", updateStats);
+		updateStats();
 	</script>
 </body>
 </html>
