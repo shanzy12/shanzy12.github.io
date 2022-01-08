@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/waddle/static/css/main.438f6dbe.css",
+    "main.js": "/waddle/static/js/main.65fc3053.js",
+    "index.html": "/waddle/index.html",
+    "main.438f6dbe.css.map": "/waddle/static/css/main.438f6dbe.css.map",
+    "main.65fc3053.js.map": "/waddle/static/js/main.65fc3053.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.438f6dbe.css",
+    "static/js/main.65fc3053.js"
+  ]
+}
